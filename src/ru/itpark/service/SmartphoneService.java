@@ -1,28 +1,29 @@
 package ru.itpark.service;
 
+import ru.itpark.domain.Product;
 import ru.itpark.domain.Smartphone;
-import ru.itpark.repository.SmartphoneRepository;
+import ru.itpark.repository.ProductRepository;
 
 import java.util.Comparator;
 import java.util.List;
 
 public class SmartphoneService {
-    private SmartphoneRepository repository;
+    private ProductRepository repository;
 
-    public SmartphoneService(SmartphoneRepository repository) {
+    public SmartphoneService(ProductRepository repository) {
         this.repository = repository;
     }
 
-    public void add(Smartphone smartphone) {
-        repository.add(smartphone);
+    public void add(Product product) {
+        repository.add(product);
     }
 
-    public List<Smartphone> getAll() {
+    public List<Product> getAll() {
         return repository.getAll();
     }
 
-    public List<Smartphone> getSorted(Comparator<Smartphone> comparator) {
-        List<Smartphone> result = repository.getAll();
+    public List<Product> getSorted(Comparator<Product> comparator) {
+        List<Product> result = repository.getAll();
         result.sort(comparator);
         return result;
     }
